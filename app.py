@@ -5,8 +5,8 @@ class Flashcards:
         mode.cards = cards
         mode.answer = answer
     def points(cards, answer):
-
- def load_from_file(cls, filename="Flashcards.json"):
+        json.dump(self.cards, file, indent=4)
+def load_from_file(cls, filename="Flashcards.json"):
         try:
             with open(filename, "r") as f:
                 cards = json.load(f)
@@ -14,10 +14,29 @@ class Flashcards:
         except FileNotFoundError:
             return cls()  
 
-flashcard.term = answer
+flashcards = Flashcards.load_from_file()
+
+flashcards.add_flashcard("x")
+flashcards.add_flashcard("ye")
+
+
+flashcards.save_to_file()
+
+card_data = [card.to_dict() for card in cards]
 
 with open("card.json", "w") as file:
     json.dump(card_data, file, indent=4)
+
+def load_from_file(cls, filename="Flashcards.json"):
+    try:
+        with open(filename, "r") as f:
+                cards = json.load(f)
+        return cls(cards)
+    except FileNotFoundError:
+            return cls()  
+
+def start_quiz():
+    flashcards = Flashcards.load_from_file()
 
 correct_answer = ()
 word = input("Enter answer")
@@ -49,12 +68,16 @@ total_questions = 0
 streak = 0
 
 
+
 if answer.strip().lower() == answer_strip.lower:
 
-card_data = [card.to_dict() for card in cards]
 
-with open("card.json", "w") as file:
-    json.dump(card_data, file, indent=4)
+    with open("card.json", "w") as file:
+      json.dump(card_data, file, indent=4)
 
+    flashcards.save_to_file()
+
+
+start_quiz()
 
 
