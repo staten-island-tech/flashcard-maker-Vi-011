@@ -3,13 +3,10 @@ import json
 class Flashcards:
     def __init__(self, cards=None):
         self.cards = cards if cards else {}
-    
     def add_flashcard(self, word, answer):
         self.cards[word] = answer
-    
     def to_dict(self):
         return self.cards
-
     def save_to_file(self, filename="Flashcards.json"):
         with open(filename, "w") as file:
             json.dump(self.cards, file, indent=4)
@@ -26,12 +23,14 @@ class Flashcards:
 
 def start_quiz():
     flashcards = Flashcards.load_from_file()
-    
-    correct_answers = 0
-    streak = 0
-    streak_bonus = 0
+
     
     while True:
+        
+        correct_answers = 0
+        streak = 0
+        streak_bonus = 0
+
         word = input("Enter word: ").strip()
         if word == "exit":
             break
@@ -51,7 +50,7 @@ def start_quiz():
 
     print(f"Total correct answers: {correct_answers}")
     print(f"Streak bonus: {streak_bonus}")
-
+    print{streak}
     
     flashcards.save_to_file()
 
@@ -64,4 +63,5 @@ flashcards.add_flashcard("HTML", "A markup language")
 
 flashcards.save_to_file()
 
-start_quiz()
+start_quiz() 
+
