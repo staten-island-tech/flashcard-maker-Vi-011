@@ -22,7 +22,7 @@ flashcards.add_flashcard("ye")
 
 flashcards.save_to_file()
 
-card_data = [card.to_dict() for card in cards]
+card_data = [card.to_dict() for card in "cards"]
 
 with open("card.json", "w") as file:
     json.dump(card_data, file, indent=4)
