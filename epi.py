@@ -1,6 +1,6 @@
 
-P = 10
-N = 2
+P = 750
+N = 5
 R = 1
 total_infected = N
 new_infected = N
