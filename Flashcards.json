@@ -1,7 +1,5 @@
 {
-    "What is the color of the sky?": "blue",
-    "Pineapple": "pen"
-
-    ,"What is 1+1+1": "3",
-    "How are you yesterday?": "good"
+    "Python": "A programming language",
+    "HTML": "A markup language",
+    "10 - 5": 5 
 }
